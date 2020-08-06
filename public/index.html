@@ -4,40 +4,49 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="/build/tailwind.css" />
-    <title>Welcome to Tailwind!</title>
+    <title>Adapter Layout</title>
   </head>
   <body class="antialiased">
     <header class="relative w-full bg-white">
-      <nav class="relative max-w-screen-xl my-0 mx-auto p-0 py-5 flex flex-row items-center">
+      <nav class="relative max-w-screen-xl flex flex-row items-center my-0 mx-auto px-2 py-5 md:px-4">
         <img src="/" alt="ADAPTER LOGO" class="aside-width logo" />
-        <div class="flex-1 pl-2 flex justify-between items-center">
-          <a class="flex-3 link-gray hover:underline" href="/">В начало</a>
-
-          <span class="flex-2 flex flex-row items-center">
-            <span>✉</span>
-            <a class="link-purple hover:underline ml-1" href="/">Уведомления</a>
-            <button class="ml-2 circle-green">38</button>
+        <!-- Появляется начиная с ширины 1024 -->
+        <div class="hidden lg:flex flex-1 pl-2 justify-between items-center">
+          <span class="flex-3 whitespace-no-wrap">
+            <a class="link-gray hover:underline" href="/">В начало</a>
           </span>
 
-          <span class="flex-2 flex flex-row items-center">
+          <span class="flex-2 flex flex-row flex-no-wrap whitespace-no-wrap items-center mx-4">
+            <span>✉</span>
+            <a class="link-purple hover:underline ml-1" href="/">Уведомления</a>
+            <button class="ml-1 circle-green">38</button>
+          </span>
+
+          <span class="flex-3 flex flex-row flex-no-wrap whitespace-no-wrap items-center">
             <span class="link-gray">Ваш баланс:</span>
             <a class="link-green hover:underline ml-1" href="/">43 000 000 рублей</a>
           </span>
 
-          <span class="flex-2 flex flex-row items-center justify-end">
+          <span class="flex-2 flex flex-row flex-no-wrap whitespace-no-wrap items-center justify-end mx-2">
             <span>👤</span>
-            <a class="link-purple hover:underline ml-1" href="/">Сергей Петров</a>
+            <a class="link-purple hover:underline" href="/">Сергей Петров</a>
           </span>
         </div>
 
+        <!-- Показать меню до ширины 1024-->
+        <span class="text-2xl flex-1 flex justify-end lg:hidden">
+          <button>☰</button>
+        </span>
       </nav>
     </header>
 
     <div class="relative bg-gray-200">
-      <div class="relative max-w-screen-xl mx-auto">
-        <div class="flex flex-col min-h-screen lg:flex-row items-start">
-          <aside class="aside-width flex flex-col min-h-screen items-start justify-between w-24 pt-8">
-
+      <div class="relative max-w-screen-xl mx-auto px-2 md:px-4">
+        <div class="flex min-h-screen flex-row items-start">
+          <!-- Появляется начиная с ширины 1024 -->
+          <aside
+            class="aside-width hidden lg:flex flex-col min-h-screen items-start justify-between w-24 pt-8"
+          >
             <nav class="flex flex-col m-0 p-0">
               <a href="/" class="w-full link-gray hover:underline font-bold text-2xl mb-5">
                 <span class="transform scale-x-50">
@@ -54,16 +63,15 @@
               </div>
             </nav>
 
-            <button class="ml-2 circle-purple">✉</button>
           </aside>
 
-          <main class="flex-grow flex flex-col justify-center py-8">
+          <article class="flex-grow flex flex-col justify-center py-8">
             <div class="pl-2">
               <a href="/" class="link-gray hover:underline">К списку услуг</a>
               <h1 class="font-bold text-3xl sm:text-3xl md:text-4xl text-purple-900 mt-1">Загрузка ассортимента</h1>
 
-              <div class="flex flex-row">
-                <div class="flex-1">
+              <div class="flex flex-col md:flex-row">
+                <div class="md:flex-1">
                   <p class="font-semibold text-xl text-gray-600 mt-4 leading-relaxed">
                     Быстро и качественно размещаем товары на крупнейших маркетплейсах
                   </p>
@@ -76,14 +84,14 @@
                   </ul>
 
                   <div class="flex flex-row items-center mt-5">
-                    <button class="bg-green-500 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded">
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded whitespace-no-wrap">
                       Оставить заявку
                     </button>
                     <strong class="pl-6">от 100 руб за карточку товара</strong>
                   </div>
                 </div>
 
-                <ul class="flex-1 grid grid-cols-3 grid-rows-2 gap-5 mt-8">
+                <ul class="md:flex-1 grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-3 lg:grid-cols-3 lg:grid-rows-2 gap-5 mt-8 md:ml-8">
                   <li class="vendor">
                     <img src="/" alt="ozon" />
                   </li>
@@ -108,7 +116,7 @@
                 Как ADAPTER загружает ассортимент
               </h2>
 
-              <div class="assortment grid grid-cols-2 grid-rows-3 gap-5 mt-8">
+              <div class="assortment grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-5 mt-8">
                 <div class="assortment__card">
                   <span class="assortment__digit">1</span>
 
@@ -181,9 +189,10 @@
                 </div>
               </div>
             </div>
-          </main>
+          </article>
         </div>
       </div>
+      <button class="fixed bottom-0 left-0 ml-6 mb-6 circle-purple">✉</button>
     </div>
   </body>
 </html>

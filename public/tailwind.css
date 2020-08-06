@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 
-
+button:focus {
+    outline: none;
+}
 li {
     @apply font-semibold text-base text-gray-900 leading-relaxed;
 }
@@ -46,9 +48,6 @@ li {
 .circle-purple:hover {
     @apply bg-purple-700;
 }
-.circle-green:focus, .circle-purple:focus {
-    @apply .outline-none;
-}
 
 .vendor {
     @apply flex items-center justify-center border-dashed border-2 border-gray-400 p-5;
@@ -59,7 +58,7 @@ li {
 }
 
 .assortment__digit {
-    @apply font-light text-10xl text-gray-400 w-24;
+    @apply font-light text-6xl text-gray-400 w-24;
     line-height: 0.7;
     min-width: 6rem;
 }
