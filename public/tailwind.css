@@ -1,3 +1,75 @@
 @tailwind base;
 @tailwind components;
+
+
+li {
+    @apply font-semibold text-base text-gray-900 leading-relaxed;
+}
+
+.aside-width {
+    min-width: 200px;
+}
+
+.link {
+    @apply font-bold text-sm;
+}
+
+.link-gray {
+    @apply link text-gray-500;
+}
+
+.link-green {
+    @apply link text-green-500;
+}
+
+.link-purple {
+    @apply link text-purple-900;
+}
+
+.aside__link {
+    @apply link-purple leading-relaxed mb-1;
+}
+.aside__link:hover {
+    @apply underline;
+}
+
+.circle-green {
+    @apply flex items-center justify-center bg-green-500 text-white text-sm rounded-full w-8 h-8 p-1;
+}
+.circle-green:hover {
+    @apply bg-green-700;
+}
+
+.circle-purple {
+    @apply flex items-center justify-center bg-purple-900 text-white text-xl rounded-full w-10 h-10 p-2;
+}
+.circle-purple:hover {
+    @apply bg-purple-700;
+}
+.circle-green:focus, .circle-purple:focus {
+    @apply .outline-none;
+}
+
+.vendor {
+    @apply flex items-center justify-center border-dashed border-2 border-gray-400 p-5;
+}
+
+.assortment__card {
+    @apply flex flex-row flex-grow justify-start items-start p-8 bg-white shadow-lg rounded;
+}
+
+.assortment__digit {
+    @apply font-light text-10xl text-gray-400 w-24;
+    line-height: 0.7;
+    min-width: 6rem;
+}
+
+.assortment__header {
+    @apply font-bold text-gray-900;
+}
+
+.assortment__list {
+    @apply list-disc mt-3 pl-5;
+}
+
 @tailwind utilities;
