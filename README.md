@@ -1,6 +1,9 @@
-# Tailwind CSS Playground
+# adapter-layout
 
-A simple starter project for playing around with Tailwind in a proper PostCSS environment.
+![layout](https://user-images.githubusercontent.com/35951053/89719289-786ba680-d9cf-11ea-84e4-e13089ab4d01.gif)
+
+1) Сверстать лейаут по примеру из картинки. Не нужно заморачиваться с пикселхантингом и пытаться воспроизвести макет. Достаточно сделать основные колонки и отобразить основные элементы из макета
+
 
 To get started:
 
